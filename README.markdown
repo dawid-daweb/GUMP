@@ -238,7 +238,8 @@ require("gump.class.php");
    It should return a boolean value indicating whether the value is valid.
 */
 GUMP::add_validator("is_object", function($field, $input, $param = NULL) {
-    return is_object($input[$field]);
+    if(is_object($input[$field])); return true;
+    else return ['custom message'];
 });
 
 /* 
